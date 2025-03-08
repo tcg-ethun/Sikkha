@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sikkha - Comprehensive Course Catalog">
+    <title>Sikkha - Course Catalog</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body class="light-mode">
+    <!-- Simple Header -->
+    <header>
+        <div class="simple-header">
+            <a href="index.html" class="logo" title="Back to Home">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Sikkha</span>
+            </a>
+            <button id="theme-toggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Course Categories -->
+    <section class="course-categories">
+        <div class="container">
+            <div class="category-filters">
+                <div class="radio-group">
+                    <input type="radio" id="all" name="category" value="all" checked>
+                    <label for="all">All Courses</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="popular" name="category" value="popular">
+                    <label for="popular">Popular</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="frontend" name="category" value="frontend">
+                    <label for="frontend">Frontend</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="backend" name="category" value="backend">
+                    <label for="backend">Backend</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="more" name="category" value="more">
+                    <label for="more">More</label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Course Listings -->
+    <section class="course-listings">
+        <div class="container">
+            <h1>Our Course Catalog</h1>
+            <div class="course-grid">
+                <!-- HTML Course -->
+                <div class="course-card" data-category="frontend">
+                    <div class="course-header">
+                        <img src="assets/images/courses/HTMl.png" alt="HTML5 Course">
+                        <div class="course-level">Beginner</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>HTML5</h3>
+                        <p>Master the foundation of web development with our comprehensive HTML5 course.</p>
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>6 Weeks</span>
+                            </div> &nbsp; &nbsp; &nbsp;
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i> 
+                                <span>24 Lessons</span>
+                            </div>
+                        </div>
+                        <div class="course-topics">
+                            <h4>What you'll learn:</h4>
+                            <ul>
+                                <li>HTML Document Structure</li>
+                                <li>Forms and Input Elements</li>
+                                <li>Semantic HTML</li>
+                                <li>Multimedia Integration</li>
+                            </ul>
+                        </div>
+                        <a href="html-css/index.html" class="btn primary">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- CSS Course -->
+                <div class="course-card" data-category="frontend">
+                    <div class="course-header">
+                        <img src="assets/images/courses/CSS.png" alt="CSS3 Course">
+                        <div class="course-level">Intermediate</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>CSS3</h3>
+                        <p>Transform your websites with modern CSS techniques and responsive design.</p>
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>8 Weeks</span>
+                            </div> &nbsp; &nbsp; &nbsp;
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>32 Lessons</span>
+                            </div>
+                        </div>
+                        <div class="course-topics">
+                            <h4>What you'll learn:</h4>
+                            <ul>
+                                <li>Flexbox & Grid Layout</li>
+                                <li>CSS Animations</li>
+                                <li>Responsive Design</li>
+                                <li>CSS Variables</li>
+                            </ul>
+                        </div>
+                        <a href="html-css/index.html#css-intro" class="btn primary">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- JavaScript Course -->
+                <div class="course-card" data-category="backend">
+                    <div class="course-header">
+                        <img src="assets/images/courses/JS.png" alt="JavaScript Course">
+                        <div class="course-level">Intermediate</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>JavaScript Essentials</h3>
+                        <p>Learn modern JavaScript programming with practical examples and projects.</p>
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>10 Weeks</span>
+                            </div> &nbsp; &nbsp; &nbsp;
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>40 Lessons</span>
+                            </div>
+                        </div>
+                        <div class="course-topics">
+                            <h4>What you'll learn:</h4>
+                            <ul>
+                                <li>ES6+ Features</li>
+                                <li>DOM Manipulation</li>
+                                <li>Async Programming</li>
+                                <li>Modern JS Concepts</li>
+                            </ul>
+                        </div>
+                        <a href="javascript/index.html" class="btn primary">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- C Programming Course -->
+                <div class="course-card" data-category="backend,popular">
+                    <div class="course-header">
+                        <img src="assets/images/courses/C.png" alt="C Programming Course">
+                        <div class="course-level">Beginner</div>
+                    </div>
+                    <div class="course-content">
+                        <h3>C Programming</h3>
+                        <p>Master the fundamentals of C programming with hands-on projects.</p>
+                        <div class="course-details">
+                            <div class="detail-item">
+                                <i class="far fa-clock"></i>
+                                <span>12 Weeks</span>
+                            </div> &nbsp; &nbsp; &nbsp;
+                            <div class="detail-item">
+                                <i class="fas fa-book"></i>
+                                <span>48 Lessons</span>
+                            </div>
+                        </div>
+                        <div class="course-topics">
+                            <h4>What you'll learn:</h4>
+                            <ul>
+                                <li>Basic Syntax</li>
+                                <li>Data Structures</li>
+                                <li>Memory Management</li>
+                                <li>File Handling</li>
+                            </ul>
+                        </div>
+                        <a href="c/index.html" class="btn primary">Start Learning</a>
+                    </div>
+                </div>
+
+                <!-- More Category - Empty -->
+                <div class="course-card more-placeholder" data-category="more">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom JavaScript -->
+    <script src="courses.js"></script>
+</body>
+</html> 
