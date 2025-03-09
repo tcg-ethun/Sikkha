@@ -1,0 +1,553 @@
+/* Variables */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #2c3e50;
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--light-bg);
+    margin: 0;
+    padding: 0;
+}
+
+.profile-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Profile Header */
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    transition: var(--transition);
+}
+
+.profile-header:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-image {
+    flex-shrink: 0;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.profile-image:hover img {
+    transform: scale(1.1);
+}
+
+.profile-title {
+    flex-grow: 1;
+}
+
+.profile-title h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+}
+
+.profile-occupation {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    margin: 0.5rem 0;
+    padding: 0.3rem 1rem;
+    background: rgba(52, 152, 219, 0.1);
+    border-radius: 2rem;
+}
+
+.life-span {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.life-span i {
+    color: var(--secondary-color);
+    margin-right: 0.5rem;
+}
+
+/* Profile Sections */
+.profile-section {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.profile-section:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.profile-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.profile-section h2 i {
+    color: var(--secondary-color);
+}
+
+/* Education Timeline */
+.education-timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin: 2rem 0;
+}
+
+.education-timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+    border-radius: 2px;
+}
+
+.education-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.education-item:last-child {
+    margin-bottom: 0;
+}
+
+.education-item::before {
+    content: '';
+    position: absolute;
+    left: -3rem;
+    top: 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: var(--secondary-color);
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px rgba(52, 152, 219, 0.2);
+    transition: var(--transition);
+}
+
+.education-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.education-item:hover::before {
+    background: var(--accent-color);
+    box-shadow: 0 0 0 6px rgba(231, 76, 60, 0.2);
+}
+
+.education-item h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+    font-size: 1.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.education-item p {
+    color: var(--text-color);
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.timeline-image {
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.8rem;
+    margin-top: 1rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.timeline-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Back Button */
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    z-index: 100;
+}
+
+.back-button:hover {
+    transform: scale(1.1);
+    background: var(--accent-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.back-button i {
+    transition: transform 0.3s ease;
+}
+
+.back-button:hover i {
+    transform: translateX(-3px);
+}
+
+/* Dark Mode Adjustments */
+@media (prefers-color-scheme: dark) {
+    .education-item {
+        background: #2d2d2d;
+    }
+
+    .education-item::before {
+        border-color: #2d2d2d;
+    }
+
+    .back-button {
+        background: var(--accent-color);
+    }
+
+    .back-button:hover {
+        background: var(--secondary-color);
+    }
+}
+
+/* Achievements Grid */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.achievement-card {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    transition: var(--transition);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.achievement-card h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+}
+
+.achievement-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+    transition: var(--transition);
+}
+
+.achievement-image:hover {
+    transform: scale(1.03);
+}
+
+/* Awards List */
+.awards-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.award-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1rem;
+    background: var(--light-bg);
+    border-radius: 0.8rem;
+    transition: var(--transition);
+}
+
+.award-item:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow);
+}
+
+.award-item i {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.award-image {
+    max-width: 150px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+/* Biography Content */
+.biography-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.bio-section {
+    background: var(--light-bg);
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    transition: var(--transition);
+}
+
+.bio-section:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.bio-section h3 {
+    color: var(--primary-color);
+    margin: 0 0 1rem 0;
+}
+
+.bio-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    transition: var(--transition);
+}
+
+.bio-image:hover {
+    transform: scale(1.03);
+}
+
+/* Quotes List */
+.quotes-list {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.quote-item {
+    position: relative;
+    padding: 1.5rem;
+    background: var(--light-bg);
+    border-radius: 0.8rem;
+    transition: var(--transition);
+}
+
+.quote-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.quote-item p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.quote-item::before {
+    content: '"';
+    position: absolute;
+    top: -0.5rem;
+    left: 1rem;
+    font-size: 4rem;
+    color: var(--secondary-color);
+    opacity: 0.2;
+}
+
+/* Image Gallery */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90vh;
+}
+
+.modal-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.modal-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .life-span {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .biography-content {
+        grid-template-columns: 1fr;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .profile-title h1 {
+        font-size: 2rem;
+    }
+
+    .profile-section {
+        padding: 1.5rem;
+    }
+
+    .image-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --light-bg: #1a1a1a;
+        --text-color: #ffffff;
+        --primary-color: #3498db;
+        --dark-bg: #000000;
+    }
+
+    body {
+        background-color: var(--dark-bg);
+    }
+
+    .profile-header,
+    .profile-section {
+        background: #2d2d2d;
+    }
+
+    .achievement-card,
+    .award-item,
+    .bio-section,
+    .quote-item {
+        background: #333;
+    }
+
+    .profile-occupation {
+        background: rgba(52, 152, 219, 0.2);
+    }
+} 

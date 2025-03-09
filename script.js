@@ -10,7 +10,7 @@ document.body.appendChild(overlay);
 
 // Prevent blue highlight on touch for interactive elements
 function preventTouchHighlight() {
-    const interactiveElements = document.querySelectorAll('a, button, .btn, .course-card, .feature-card, .testimonial-card');
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .course-card, .feature-card, .testimonial-card, .tool-card');
     
     interactiveElements.forEach(element => {
         element.addEventListener('touchstart', function(e) {
@@ -34,7 +34,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe elements for animations
-document.querySelectorAll('.course-card, .feature-card, .testimonial-card').forEach(el => {
+document.querySelectorAll('.course-card, .feature-card, .testimonial-card, .tool-card').forEach(el => {
     observer.observe(el);
 });
 
@@ -99,6 +99,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     preventTouchHighlight();
+    initEducationalTools();
 
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -111,6 +112,73 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Educational Tools functionality
+function initEducationalTools() {
+    // Handle educational tools section links
+    const toolLinks = document.querySelectorAll('.tool-card a, .tools-cta a');
+    
+    toolLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // If the link contains a hash (section ID)
+            if (href.includes('#') && !href.startsWith('#')) {
+                e.preventDefault();
+                
+                // Extract the page and section
+                const [page, section] = href.split('#');
+                
+                // Store the section in localStorage to scroll to it after page load
+                if (section) {
+                    localStorage.setItem('scrollToSection', section);
+                }
+                
+                // Navigate to the page
+                window.location.href = href;
+            }
+        });
+    });
+    
+    // Check if we need to scroll to a section after page load
+    const scrollToSection = localStorage.getItem('scrollToSection');
+    if (scrollToSection) {
+        // Clear the storage item
+        localStorage.removeItem('scrollToSection');
+        
+        // Wait for page to fully load
+        setTimeout(() => {
+            const targetSection = document.getElementById(scrollToSection);
+            if (targetSection) {
+                // Scroll to the section
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // If there are tabs, activate the correct tab
+                const tabButtons = document.querySelectorAll('.tab-btn');
+                if (tabButtons.length > 0) {
+                    tabButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                        if (btn.getAttribute('data-tab') === scrollToSection) {
+                            btn.classList.add('active');
+                        }
+                    });
+                    
+                    // Show the correct section
+                    const featureSections = document.querySelectorAll('.feature-section');
+                    featureSections.forEach(section => {
+                        section.classList.remove('active');
+                        if (section.id === scrollToSection) {
+                            section.classList.add('active');
+                        }
+                    });
+                }
+            }
+        }, 300);
+    }
+}
 
 // Smooth scroll for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {

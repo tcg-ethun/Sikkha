@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sikkha - Your Learning Dashboard">
+    <meta name="keywords" content="dashboard, learning, courses, progress">
+    <meta name="author" content="Sikkha">
+    <title>Dashboard - Sikkha</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body class="light-mode">
+    <!-- Dashboard Layout -->
+    <div class="dashboard-layout">
+        <!-- Sidebar -->
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>Sikkha</span>
+                </a>
+                <button class="sidebar-toggle" id="sidebar-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <div class="sidebar-user">
+                <div class="user-avatar">
+                    <img src="assets/images/avatars/default-avatar.png" alt="User Avatar">
+                </div>
+                <div class="user-info">
+                    <h3>John Doe</h3>
+                    <p>Student</p>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active">
+                        <a href="dashboard.html">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="my-courses.html">
+                            <i class="fas fa-book-open"></i>
+                            <span>My Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="browse-courses.html">
+                            <i class="fas fa-search"></i>
+                            <span>Browse Courses</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="certificates.html">
+                            <i class="fas fa-certificate"></i>
+                            <span>Certificates</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="profile.html">
+                            <i class="fas fa-user"></i>
+                            <span>Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="settings.html">
+                            <i class="fas fa-cog"></i>
+                            <span>Settings</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="theme-toggle" class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                    <span>Dark Mode</span>
+                </button>
+                <a href="index.html" class="logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Top Navigation -->
+            <header class="dashboard-header">
+                <div class="header-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search for courses...">
+                </div>
+                <div class="header-actions">
+                    <div class="notification-bell">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-dropdown">
+                        <img src="assets/images/avatars/default-avatar.png" alt="User Avatar">
+                        <span>John Doe</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <div class="welcome-banner">
+                    <div class="welcome-text">
+                        <h1>Welcome back, John!</h1>
+                        <p>Continue your learning journey. You've completed 35% of your enrolled courses.</p>
+                    </div>
+                    <div class="welcome-actions">
+                        <a href="my-courses.html" class="btn primary">Resume Learning</a>
+                    </div>
+                </div>
+
+                <!-- Progress Overview -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Your Progress</h2>
+                        <a href="my-courses.html" class="view-all">View All</a>
+                    </div>
+                    <div class="progress-cards">
+                        <div class="progress-card">
+                            <div class="progress-info">
+                                <h3>HTML5 Fundamentals</h3>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 75%"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>75% Complete</span>
+                                    <span>18/24 Lessons</span>
+                                </div>
+                            </div>
+                            <div class="progress-icon">
+                                <img src="assets/images/courses/HTMl.png" alt="HTML5">
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-info">
+                                <h3>CSS3 Mastery</h3>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 40%"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>40% Complete</span>
+                                    <span>13/32 Lessons</span>
+                                </div>
+                            </div>
+                            <div class="progress-icon">
+                                <img src="assets/images/courses/CSS.png" alt="CSS3">
+                            </div>
+                        </div>
+                        <div class="progress-card">
+                            <div class="progress-info">
+                                <h3>C Programming</h3>
+                                <div class="progress-bar">
+                                    <div class="progress-fill" style="width: 10%"></div>
+                                </div>
+                                <div class="progress-stats">
+                                    <span>10% Complete</span>
+                                    <span>5/48 Lessons</span>
+                                </div>
+                            </div>
+                            <div class="progress-icon">
+                                <img src="assets/images/courses/C.png" alt="C Programming">
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Dashboard Widgets -->
+                <div class="dashboard-widgets">
+                    <!-- Upcoming Deadlines -->
+                    <section class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>Upcoming Deadlines</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="deadline-list">
+                                <li class="deadline-item">
+                                    <div class="deadline-date">
+                                        <span class="day">15</span>
+                                        <span class="month">Jun</span>
+                                    </div>
+                                    <div class="deadline-info">
+                                        <h4>CSS Grid Layout Assignment</h4>
+                                        <p>CSS3 Mastery Course</p>
+                                    </div>
+                                </li>
+                                <li class="deadline-item">
+                                    <div class="deadline-date">
+                                        <span class="day">22</span>
+                                        <span class="month">Jun</span>
+                                    </div>
+                                    <div class="deadline-info">
+                                        <h4>Final HTML Project</h4>
+                                        <p>HTML5 Fundamentals Course</p>
+                                    </div>
+                                </li>
+                                <li class="deadline-item">
+                                    <div class="deadline-date">
+                                        <span class="day">30</span>
+                                        <span class="month">Jun</span>
+                                    </div>
+                                    <div class="deadline-info">
+                                        <h4>C Programming Quiz</h4>
+                                        <p>C Programming Course</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Recent Activities -->
+                    <section class="dashboard-widget">
+                        <div class="widget-header">
+                            <h3>Recent Activities</h3>
+                        </div>
+                        <div class="widget-content">
+                            <ul class="activity-list">
+                                <li class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-book"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Completed Lesson: CSS Flexbox</h4>
+                                        <p>CSS3 Mastery Course</p>
+                                        <span class="activity-time">2 hours ago</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Submitted Assignment: HTML Forms</h4>
+                                        <p>HTML5 Fundamentals Course</p>
+                                        <span class="activity-time">Yesterday</span>
+                                    </div>
+                                </li>
+                                <li class="activity-item">
+                                    <div class="activity-icon">
+                                        <i class="fas fa-play-circle"></i>
+                                    </div>
+                                    <div class="activity-info">
+                                        <h4>Started New Course: C Programming</h4>
+                                        <p>Enrolled in C Programming Course</p>
+                                        <span class="activity-time">3 days ago</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Recommended Courses -->
+                <section class="dashboard-section">
+                    <div class="section-header">
+                        <h2>Recommended For You</h2>
+                        <a href="browse-courses.html" class="view-all">View All</a>
+                    </div>
+                    <div class="recommended-courses">
+                        <div class="course-card">
+                            <div class="course-image">
+                                <img src="assets/images/courses/js.png" alt="JavaScript Course">
+                            </div>
+                            <div class="course-content">
+                                <h3>JavaScript Essentials</h3>
+                                <p>Learn modern JavaScript programming with practical examples and projects.</p>
+                                <div class="course-meta">
+                                    <span><i class="far fa-clock"></i> 10 weeks</span>
+                                    <span><i class="fas fa-book"></i> 40 lessons</span>
+                                </div>
+                                <a href="courses.html#javascript" class="btn primary">Enroll Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html> 
