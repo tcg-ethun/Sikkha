@@ -96,6 +96,14 @@
     font-weight: 600;
 }
 
+.course-count {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--primary-color);
+    display: inline-block;
+    margin-left: 0.5rem;
+}
+
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));

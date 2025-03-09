@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const categoryInputs = document.querySelectorAll('input[name="category"]');
     const courseCards = document.querySelectorAll('.course-card');
     const courseGrid = document.querySelector('.course-grid');
+    const courseCount = document.querySelector('.course-count');
 
     // Create and append the no courses message
     const noCoursesMessage = document.createElement('div');
@@ -30,6 +31,16 @@ document.addEventListener('DOMContentLoaded', () => {
     `;
     courseGrid.appendChild(noCoursesMessage);
 
+    // Count total number of actual courses (excluding placeholders)
+    const totalCourses = Array.from(courseCards).filter(card => !card.classList.contains('more-placeholder')).length;
+    
+    // Initialize course count display
+    updateCourseCount(totalCourses);
+
+    function updateCourseCount(count) {
+        courseCount.textContent = `(${count} ${count === 1 ? 'Course' : 'Courses'})`;
+    }
+
     function filterCourses(category) {
         let visibleCount = 0;
         
@@ -37,20 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
             const categories = card.dataset.category ? card.dataset.category.split(',') : [];
             
             if (category === 'all') {
-                card.style.display = 'block';
+                if (!card.classList.contains('more-placeholder')) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
             } else if (category === 'popular' && card.matches('[data-category*="backend,popular"]')) {
                 // Only show C Programming in popular category
                 card.style.display = 'block';
-            } else if (category === 'more') {
-                // Hide all cards for more category
-                card.style.display = 'none';
-            } else {
-                card.style.display = categories.includes(category) ? 'block' : 'none';
-            }
-            if (card.style.display === 'block') {
                 visibleCount++;
+            } else if (category === 'more') {
+                // Show only the more placeholder
+                if (card.classList.contains('more-placeholder')) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            } else {
+                if (categories.includes(category)) {
+                    card.style.display = 'block';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
             }
         });
+
+        // Update course count display
+        updateCourseCount(visibleCount);
 
         // Show/hide no courses message
         if (visibleCount === 0) {
