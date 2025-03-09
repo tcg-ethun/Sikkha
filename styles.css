@@ -4,6 +4,10 @@
     padding: 0;
     box-sizing: border-box;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Prevents blue flash on touch */
+    -webkit-touch-callout: none; /* Prevents callout menu on touch and hold */
+    -webkit-user-select: none; /* Prevents text selection on touch */
+    user-select: none; /* Standard property for preventing text selection */
 }
 
 :root {
@@ -98,6 +102,8 @@ h3 { font-size: 1.5rem; }
     transition: all 0.3s ease;
     border: none;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent; /* Ensures no highlight on mobile */
+    outline: none; /* Removes outline on focus */
 }
 
 .btn.primary {
@@ -309,7 +315,7 @@ h3 { font-size: 1.5rem; }
 /* Grid Layouts */
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     margin-top: 3rem;
     padding: 0 1rem;
@@ -359,6 +365,11 @@ footer {
     .hero-content {
         margin: 0 auto;
         text-align: center;
+    }
+    
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }
 
@@ -433,41 +444,83 @@ footer {
 
     /* Keep course text centered */
     .courses {
-        text-align: center;
+        padding: 4rem 0 3rem;
+        overflow: hidden; /* Prevent horizontal scrollbar on the whole page */
     }
 
+    .course-image {
+        height: 160px;
+    }
+    
     .course-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        height: auto;
-        padding: 1.5rem;
+        padding: 1.2rem;
+        display: flex !important;
+        flex-direction: column !important;
+        height: auto !important;
     }
-
-    .course-content .btn {
-        display: inline-block;
-        width: auto;
-        min-width: 160px;
-        margin: 1.5rem auto 0.5rem;
-        padding: 0.8rem 1.5rem;
-        font-size: 1rem;
+    
+    .course-content h3 {
+        font-size: 1.1rem;
+        margin-bottom: 0.6rem;
     }
-
+    
+    .course-content p {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+    
     .course-meta {
-        width: 100%;
-        justify-content: center;
-        gap: 2rem;
+        margin-bottom: 1rem;
+        font-size: 0.8rem;
     }
 
     .course-grid {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        display: flex !important;
+        grid-template-columns: unset;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
         gap: 1.5rem;
-        padding: 0 1rem;
+        padding: 0 1rem 1rem;
+        margin: 2rem -1rem 0; /* Negative margin to extend beyond container */
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        position: relative;
+        width: calc(100% + 2rem); /* Compensate for negative margins */
+    }
+    
+    .course-grid::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 40px;
+        background: linear-gradient(to right, transparent, var(--background-color));
+        pointer-events: none;
+    }
+    
+    .course-grid::-webkit-scrollbar {
+        display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
     }
     
     .course-card {
-        max-width: 100%;
+        flex: 0 0 85% !important; /* Make cards wider on mobile */
+        min-width: 260px !important;
+        max-width: 85%;
+        margin-bottom: 1rem;
+        margin-right: 1rem;
+        box-shadow: 0 4px 12px var(--shadow-color);
+        display: block !important;
+    }
+    
+    .course-card:first-child {
+        margin-left: 0.5rem; /* Add space at the beginning */
+    }
+    
+    .course-card:last-child {
+        margin-right: 2rem; /* Add extra space at the end for better UX */
     }
     
     .course-content {
@@ -477,11 +530,33 @@ footer {
     .course-content h3 {
         font-size: 1.2rem;
     }
+
+    .view-all-courses {
+        margin-top: 2.5rem;
+        width: 100%;
+    }
+    
+    .view-all-courses .btn {
+        width: 80%;
+        max-width: 300px;
+    }
+
+    .courses h2::after {
+        content: '← Swipe to see more →';
+        display: block;
+        font-size: 0.9rem;
+        font-weight: normal;
+        margin-top: 0.5rem;
+        opacity: 0.7;
+        color: var(--primary-color);
+    }
 }
 
 @media (max-width: 480px) {
     .course-card {
-        max-width: 300px;
+        flex: 0 0 85% !important;
+        min-width: 240px !important;
+        max-width: 85%;
     }
 
     .course-content {
@@ -1220,9 +1295,9 @@ footer {
 
 @media (max-width: 480px) {
     .course-content .btn {
+        margin: 1.2rem auto;
         width: 100%;
         max-width: 200px;
-        margin: 1.2rem auto 0.5rem;
     }
 }
 
@@ -1361,4 +1436,11 @@ footer {
 section {
     margin: 0;
     padding: 0;
+}
+
+/* Allow text selection for form elements */
+input, textarea, select {
+    -webkit-user-select: text;
+    user-select: text;
+    -webkit-touch-callout: default;
 } 

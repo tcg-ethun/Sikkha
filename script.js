@@ -8,6 +8,17 @@ const overlay = document.createElement('div');
 overlay.classList.add('overlay');
 document.body.appendChild(overlay);
 
+// Prevent blue highlight on touch for interactive elements
+function preventTouchHighlight() {
+    const interactiveElements = document.querySelectorAll('a, button, .btn, .course-card, .feature-card, .testimonial-card');
+    
+    interactiveElements.forEach(element => {
+        element.addEventListener('touchstart', function(e) {
+            // This empty handler with passive: true helps prevent the blue highlight
+        }, { passive: true });
+    });
+}
+
 // Advanced Animation Observer
 const observerOptions = {
     threshold: 0.2,
@@ -87,6 +98,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
+    preventTouchHighlight();
 
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
