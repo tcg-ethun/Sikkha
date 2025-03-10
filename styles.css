@@ -1619,14 +1619,21 @@ input, textarea, select {
 }
 
 #view{
-    width:10%;
+    width:150px;
     color: rgb(0, 0, 0);
     font-weight: bold;
-    height: 3rem;
+    height: 3.4rem;
+    font-size: 1rem;
     border-radius: 50px;
     font-family: 'Poppins', sans-serif;
     background-color:white;
     /* color: white; */
+    margin-top: 2rem;
     margin-bottom: 3rem;
-    border: 1px solid rgb(108, 175, 247);
+    border: 2px solid #6caff7;
+}
+#view:hover{
+    color: white;
+    transition: background-color .4s;
+    background-color: #6caff7;
 }
