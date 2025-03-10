@@ -1609,3 +1609,23 @@ input, textarea, select {
         min-width: 120px;
     }
 }
+
+.view-all{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#view{
+    width:10%;
+    color: rgb(126, 161, 241);
+    font-weight: bold;
+    height: 3rem;
+    border-radius: 50px;
+    font-family: 'Poppins', sans-serif;
+    background-color:white;
+    /* color: white; */
+    margin-bottom: 3rem;
+    border: 1px solid rgb(108, 175, 247);
+}
