@@ -39,7 +39,7 @@ body {
 }
 
 /* Smooth Content Appearance */
-.hero,.courses,.features,.testimonials,.contact, footer {
+.hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view {
     opacity: 0;
     transform: translateY(20px);
     animation: smoothAppear 0.8s ease forwards;
@@ -47,8 +47,9 @@ body {
 
 .courses { animation-delay: 0.2s; }
 .features { animation-delay: 0.4s; }
-.testimonials { animation-delay: 0.6s; }
+.view-all { animation-delay: 0.4s; }
 .contact { animation-delay: 0.8s; }
+.testimonials { animation-delay: 0.6s; }
 footer { animation-delay: 1s; }
 
 @keyframes smoothAppear {
@@ -869,13 +870,13 @@ footer {
 }
 
 .testimonial-card img {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
     margin-bottom: 1.2rem;
     object-fit: cover;
     border: 3px solid var(--primary-color);
-    padding: 2px;
+    /* padding: 2px; */
     background-color: var(--background-color);
 }
 
@@ -1619,7 +1620,7 @@ input, textarea, select {
 
 #view{
     width:10%;
-    color: rgb(126, 161, 241);
+    color: rgb(0, 0, 0);
     font-weight: bold;
     height: 3rem;
     border-radius: 50px;
