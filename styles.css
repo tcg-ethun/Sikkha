@@ -520,51 +520,31 @@ footer {
     /* Featured Courses Section - Mobile View */
     #courses .course-grid {
         display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-        overflow-x: visible;
-        flex-wrap: wrap;
-        width: 100%;
-        margin: 2rem auto 0;
-        padding: 0 1rem;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1rem;
+        padding: 1rem 0;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE and Edge */
+        margin: 0;
+    }
+
+    #courses .course-grid::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
     }
     
     #courses .course-card {
-        flex: 0 0 100%;
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto 1.5rem;
-        display: flex;
-        flex-direction: column;
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        margin: 0;
     }
-    
-    #courses .course-image {
-        height: 120px;
-        padding: 1.2rem;
-    }
-    
-    #courses .course-content {
-        padding: 1.5rem;
-        text-align: center;
-    }
-    
-    #courses .course-content h3 {
-        font-size: 1.2rem;
-        text-align: center;
-    }
-    
-    #courses .course-content p {
-        text-align: center;
-        font-size: 0.9rem;
-    }
-    
-    #courses .course-meta {
-        justify-content: center;
-    }
-    
-    #courses h2::after {
-        content: '';
-        display: none;
+
+    /* Add padding to container to show partial next card */
+    #courses {
+        padding: 2rem 5%;
+        overflow-x: hidden;
     }
 
     /* Regular course grid (not featured) */
@@ -579,17 +559,11 @@ footer {
         padding: 0 1rem;
     }
     
-    .course-grid:not(#courses .course-grid)::after {
-        display: none;
-    }
-    
     .course-grid:not(#courses .course-grid) .course-card {
         flex: 0 0 100%;
         width: 100%;
         max-width: 350px;
         margin: 0 auto 1.5rem;
-        display: flex;
-        flex-direction: column;
     }
 
     .view-all-courses {
@@ -1634,159 +1608,4 @@ input, textarea, select {
         display: inline-block;
         min-width: 120px;
     }
-}
-
-/* Educational Tools Section */
-.educational-tools {
-    padding: 5rem 5%;
-    background-color: var(--light-color);
-    text-align: center;
-}
-
-.dark-mode .educational-tools {
-    background-color: var(--dark-color);
-}
-
-.educational-tools h2 {
-    margin-bottom: 1rem;
-    position: relative;
-    display: inline-block;
-}
-
-.educational-tools h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80px;
-    height: 4px;
-    background-color: var(--primary-color);
-    border-radius: 2px;
-}
-
-.section-description {
-    max-width: 800px;
-    margin: 0 auto 3rem;
-    color: var(--secondary-color);
-    font-size: 1.1rem;
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-}
-
-.tool-card {
-    background-color: var(--background-color);
-    border-radius: 10px;
-    padding: 2rem;
-    box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.tool-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px var(--shadow-color);
-}
-
-.tool-icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    background-color: rgba(74, 144, 226, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1.5rem;
-}
-
-.tool-icon i {
-    font-size: 2.5rem;
-    color: var(--primary-color);
-}
-
-.tool-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--text-color);
-}
-
-.tool-card p {
-    color: var(--secondary-color);
-    margin-bottom: 1.5rem;
-    flex-grow: 1;
-}
-
-.tools-cta {
-    margin-top: 2rem;
-}
-
-.tools-cta .btn {
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-}
-
-/* Responsive styles for educational tools */
-@media (max-width: 768px) {
-    .educational-tools {
-        padding: 4rem 5%;
-    }
-    
-    .tools-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .tool-card {
-        padding: 1.5rem;
-    }
-    
-    .tool-icon {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .tool-icon i {
-        font-size: 2rem;
-    }
-}
-
-/* Tool card variations */
-.tool-card:nth-child(1) .tool-icon {
-    background-color: rgba(74, 144, 226, 0.1);
-}
-
-.tool-card:nth-child(1) .tool-icon i {
-    color: #4a90e2;
-}
-
-.tool-card:nth-child(2) .tool-icon {
-    background-color: rgba(40, 167, 69, 0.1);
-}
-
-.tool-card:nth-child(2) .tool-icon i {
-    color: #28a745;
-}
-
-.tool-card:nth-child(3) .tool-icon {
-    background-color: rgba(108, 19, 175, 0.1);
-}
-
-.tool-card:nth-child(3) .tool-icon i {
-    color: #6c13af;
-}
-
-.tool-card:nth-child(4) .tool-icon {
-    background-color: rgba(244, 67, 54, 0.1);
-}
-
-.tool-card:nth-child(4) .tool-icon i {
-    color: #f44336;
 }
