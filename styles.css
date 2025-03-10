@@ -1618,7 +1618,7 @@ input, textarea, select {
 }
 
 #view{
-    width:10%;
+    width:25%;
     color: rgb(126, 161, 241);
     font-weight: bold;
     height: 3rem;
