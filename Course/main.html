@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Tutorial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="./htmls.css">
+</head>
+<body>
+
+    <!-- Home Page -->
+    <div id="home" class="content active">
+        <h1>Welcome to the HTML Tutorial</h1>
+        <button onclick="showPage('topics')" id="start">Start Learning</button>
+    </div>
+
+    <!-- Topics List -->
+    <div id="topics" class="content">
+        <div class="back-box">   <button id="back" onclick="window.location.href='../index.html'"><i class="fa-solid fa-arrow-left"></i></button></div>
+     
+        <h1 id="topic-head">Select a Topic</h1>
+        <div class="topic">
+            <button onclick="showPage('intro')" id="box" class="animate">1. Introduction</button>
+            <button onclick="showPage('editor')" id="box1" class="animate">2. HTML Editor</button>
+            <button onclick="showPage('basic')" id="box2" class="animate">3. HTML Basic</button>
+            <button onclick="showPage('elements')" id="box3" class="animate">4. HTML Elements</button>
+            <button onclick="showPage('attributes')" id="box4" class="animate">5. HTML Attributes</button>
+            <button onclick="showPage('Headings')" id="box5" class="animate">6. HTML Headings</button>
+            <button onclick="showPage(' Paragraph')" id="box6" class="animate">7. HTML Paragraph</button>
+            <button onclick="showPage('styles')" id="box7" class="animate">8. HTML Styles </button>
+            <button onclick="showPage('formatting')" id="box8" class="animate">9. HTML Formatting</button>
+            <button onclick="showPage('comments')" id="box9" class="animate"> 10. HTML Comments</button>
+            <button onclick="showPage('colors')" id="box10" class="animate">11. HTML Colors</button>
+            <button onclick="showPage('links')" id="box11" class="animate"> 12. HTML Links</button>
+            <button onclick="showPage('image')" id="box12" class="animate">13. HTML Image</button>
+            <button onclick="showPage('title')" id="box13" class="animate">14. HTML Page Title</button>
+            <button onclick="showPage('list')" id="box14" class="animate">15. HTML Lists </button>
+            <button onclick="showPage('table')" id="box15" class="animate">16. HTML Tables</button>
+        </div>
+     
+    </div>
+
+    <!-- Topic Pages -->
+    <div id="intro" class="content">
+        <h1>Introduction to HTML</h1>
+        <p>HTML is the standard markup language for creating web pages.</p>
+        <div class="nav-buttons">
+            <button onclick="showPage('topics')" id="plus">Back</button>
+            <button onclick="showPage('elements')" id="minus">Next</button>
+            <button onclick="showPage('topics')" id="plus-minus">Back to Topics</button>
+
+        </div>
+    </div>
+
+    <div id="elements" class="content">
+        <h1>HTML Elements</h1>
+        <p>HTML elements are the building blocks of a web page.</p>
+        <div class="nav-buttons">
+            <button onclick="showPage('intro')" id="plus">Previous</button>
+            <button onclick="showPage('attributes')" id="minus">Next</button>
+            <button onclick="showPage('topics')" id="plus-minus">Back to Topics</button>
+
+        </div>
+    </div>
+
+    <div id="attributes" class="content">
+        <h1>HTML Attributes</h1>
+        <p>HTML attributes provide additional information about elements.</p>
+        <div class="nav-buttons">
+            <button onclick="showPage('elements')" id="plus">Previous</button>
+            <button onclick="showPage('attributes')" id="minus">Next</button>
+            <button onclick="showPage('topics')" id="plus-minus">Back to Topics</button>
+        </div>
+    </div>
+
+
+<script src="./main.js"></script>
+</body>
+</html>
