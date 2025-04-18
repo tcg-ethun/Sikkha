@@ -96,7 +96,7 @@ margin-bottom: 4rem;
     z-index: 1000;
     border-radius: 50px;
     /* background:linear-gradient(to right, rgb(79, 79, 238),white); */
-    animation: fly 14s ease infinite;
+    animation: fly 14s ease 1;
 }
 @keyframes drop {
     0%{
