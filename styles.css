@@ -46,8 +46,8 @@ body {
     transform: translateY(20px);
     animation: smoothAppear 0.8s ease forwards;
 }
-img{animation-delay: 1s ;}
-hr{animation-delay: 1s;}
+img{animation-delay: .4s ;}
+hr{animation-delay: .4s;}
 .courses { animation-delay: 0.2s; }
 .features { animation-delay: 0.4s; }
 .view-all { animation-delay: 0.4s; }
@@ -142,11 +142,13 @@ h3 { font-size: 1.5rem; }
     /* box-shadow: 0 2px 10px var(--shadow-color); */
 }
 hr{
-    width: 190%;
-    height: 4.4rem;
+    width: 120%;
+    border-top-right-radius: 40px;
+    height: 6rem;
     border: none;
+    margin-left: -10%;
     border-top-left-radius: 40px;
-    background:linear-gradient(to top, rgb(229, 242, 255) , rgb(2, 34, 73));
+    background:linear-gradient(to top, rgb(255, 255, 255) , rgb(2, 34, 73));
     margin-top: -2rem;
 }
 
