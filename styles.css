@@ -34,6 +34,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
     color: var(--text-color);
     background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -138,6 +139,13 @@ h3 { font-size: 1.5rem; }
     top: 0;
     z-index: 1000;
     /* box-shadow: 0 2px 10px var(--shadow-color); */
+}
+hr{
+    width: 190%;
+    height: 3rem;
+    border-top-left-radius: 40px;
+    background:linear-gradient(to top, rgb(176, 173, 173) , rgb(0, 0, 0));
+    margin-top: -2rem;
 }
 
 /* Logo Styling */
