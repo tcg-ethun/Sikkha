@@ -44,7 +44,7 @@ body {
     top: 0;
     left: 0;
     min-width: 100%;
-    min-height:90%;
+    min-height:80%;
     object-fit: cover;
     z-index: -1;
 }
