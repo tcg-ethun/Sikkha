@@ -39,7 +39,15 @@ body {
     background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+#myVideo{
+    position:absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height:90%;
+    object-fit: cover;
+    z-index: -1;
+}
 /* Smooth Content Appearance */
 .hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view ,img,hr{
     opacity: 0;
@@ -148,7 +156,7 @@ hr{
     border: none;
     margin-left: -10%;
     border-top-left-radius: 40px;
-    background:linear-gradient(to top, rgb(255, 255, 255) , rgb(2, 34, 73));
+    background:linear-gradient(to top, rgb(255, 255, 255) , rgb(0, 0, 0));
     margin-top: -2rem;
 }
 

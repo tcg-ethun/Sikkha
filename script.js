@@ -238,3 +238,10 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style); 
+
+window.addEventListener('load', function() {
+    const video = document.getElementById('myVideo');
+    video.play().catch(error => {
+      console.log("Autoplay failed:", error);
+    });
+});
