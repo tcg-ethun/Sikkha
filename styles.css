@@ -131,7 +131,7 @@ h3 { font-size: 1.5rem; }
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 5%;
+    padding: 0rem 5%;
     background-color: var(--background-color);
     position: fixed;
     width: 100%;
@@ -163,7 +163,7 @@ h3 { font-size: 1.5rem; }
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 /* Nav Buttons Container */
