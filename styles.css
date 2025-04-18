@@ -112,7 +112,6 @@ margin-bottom: 4rem;
     }
     100%{
         opacity: .4;
-        transform: translateY(-400px);
     }
 }
 
