@@ -142,9 +142,10 @@ h3 { font-size: 1.5rem; }
 }
 hr{
     width: 190%;
-    height: 3rem;
+    height: 4.4rem;
+    border: none;
     border-top-left-radius: 40px;
-    background:linear-gradient(to top, rgb(176, 173, 173) , rgb(0, 0, 0));
+    background:linear-gradient(to top, rgb(229, 242, 255) , rgb(2, 34, 73));
     margin-top: -2rem;
 }
 
