@@ -158,6 +158,7 @@ hr{
   border-radius: 50px;
     background: var(--box-color);
     margin-top: -2rem;
+    margin-bottom: 3rem;
 }
 
 /* Logo Styling */
