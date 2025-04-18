@@ -76,7 +76,7 @@ textarea,
 button,
 select,
 a {
-    cursor: none;
+    cursor: pointer;
 }
 
 /* Smooth transitions for interactive elements */
