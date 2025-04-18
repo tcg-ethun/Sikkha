@@ -73,6 +73,48 @@ margin-bottom: 4rem;
     animation: smoothAppear 0.8s ease forwards;
 }
 
+.bubble-section{
+    position: absolute;
+}
+
+.bubble1{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 30px;
+    z-index: 1000;
+    border-radius: 50px;
+    /* background:linear-gradient(to right, rgb(79, 79, 238),white); */
+    animation: drop 14s ease infinite;
+}
+
+.bubble2{
+    width: 30px;
+    height: 30px;
+    margin-left: 80px;
+    margin-top: 30px;
+    z-index: 1000;
+    border-radius: 50px;
+    /* background:linear-gradient(to right, rgb(79, 79, 238),white); */
+    animation: fly 14s ease infinite;
+}
+@keyframes drop {
+    0%{
+     transform: translateY(-300px);
+    }
+    100%{
+        transform: translateY(1300px);
+    }
+}
+@keyframes fly {
+    0%{
+     transform: translateY(1700px);
+    }
+    100%{
+        opacity: .4;
+        transform: translateY(-400px);
+    }
+}
 
 .clock{
     margin-top: 4rem;
