@@ -1632,3 +1632,26 @@ input, textarea, select {
     transition: background-color .4s;
     background-color: #6caff7;
 }
+
+
+/* Scrollbar track */
+::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  /* Track background */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #8b96e5;
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
