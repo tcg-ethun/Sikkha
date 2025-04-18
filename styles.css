@@ -19,6 +19,7 @@
     --text-color: #333333;
     --card-bg: #f5f5f5;
     --social: white;
+    --abo: rgb(2, 2, 67);
     --shadow: 0px 05px 10px rgb(223, 219, 219);
     --menu-toggle: rgb(69, 69, 239);
     --box-color: linear-gradient(to top, rgb(0, 0, 0),rgb(0, 21, 255));
@@ -33,6 +34,7 @@
     --social: rgb(0, 0, 0);
     --shadow: 0px 05px 10px rgb(75, 74, 74);
     --card-bg: #2d2d2d;
+    --abo:white;
     --border-color: #404040;
     --menu-toggle: rgb(255, 255, 255);
     --box-color: linear-gradient(to top, rgb(0, 0, 0),rgb(0, 21, 255));
@@ -47,17 +49,25 @@ body {
     background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-#myVideo{
-    position:absolute;
-    top: 0;
-    left: 0;
-    min-width: 100%;
-    min-height:75%;
-    object-fit: cover;
-    z-index: -1;
+
+
+#but{
+padding: 10px;
+width: 100px;
+margin-top: 2%;
+height: 40px;
+border-radius: 50px;
+background-color: white;
+border: 3px solid rgb(146, 146, 248);
+margin-bottom: 4rem;
+}
+
+#but:hover{
+    background-color: rgb(146, 146, 248);
+    color: rgb(255, 255, 255);
 }
 /* Smooth Content Appearance */
-.hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view ,img,hr{
+.hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view ,img,hr ,.about{
     opacity: 0;
     transform: translateY(20px);
     animation: smoothAppear 0.8s ease forwards;
@@ -71,7 +81,22 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+#details{
+    text-align: left;
+}
+ul{
+    margin-left: 10%;
+}
+#abo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    color:var(--abo);
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 1rem;
+    padding-top: 4rem;
+}
 
 .time {
     font-size: 2.5rem;
