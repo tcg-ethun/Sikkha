@@ -41,12 +41,13 @@ body {
 }
 
 /* Smooth Content Appearance */
-.hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view {
+.hero,.courses,.features,.testimonials,.contact, footer , .view-all , #view ,img,hr{
     opacity: 0;
     transform: translateY(20px);
     animation: smoothAppear 0.8s ease forwards;
 }
-
+img{animation-delay: 1s ;}
+hr{animation-delay: 1s;}
 .courses { animation-delay: 0.2s; }
 .features { animation-delay: 0.4s; }
 .view-all { animation-delay: 0.4s; }
@@ -80,7 +81,7 @@ a {
 }
 
 /* Smooth transitions for interactive elements */
-.btn,.nav-links a,.social-links a,.feature-card,.course-card,.testimonial-card {
+.btn,.nav-links a,.social-links a,.feature-card,.course-card,.testimonial-card,img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
