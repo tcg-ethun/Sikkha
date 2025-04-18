@@ -245,3 +245,37 @@ window.addEventListener('load', function() {
       console.log("Autoplay failed:", error);
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Import Poppins font from Google Fonts via JavaScript as a fallback
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/poppins/4.5.0/font.min.css';
+    document.head.appendChild(link);
+    
+    function updateClock() {
+        const now = new Date();
+        
+        // Update time in 12-hour format
+        let hours = now.getHours();
+        const ampm = hours >= 12 ? 'PM' : 'AM';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // Convert 0 to 12 for 12 AM
+        const formattedHours = String(hours).padStart(2, '0');
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        document.getElementById('time').innerHTML = `${formattedHours}<span class="colon">:</span>${minutes} <span style="font-size: 0.4em; vertical-align: top; letter-spacing: 1px; font-weight: 500;">${ampm}</span>`;
+        
+        // Update date
+        const options = { weekday: 'long', month: 'long', day: 'numeric' };
+        const dateElement = document.getElementById('date');
+        dateElement.textContent = now.toLocaleDateString('en-US', options);
+        
+        // Update seconds
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        document.getElementById('seconds').textContent = `${seconds} seconds`;
+    }
+    
+    updateClock();
+    setInterval(updateClock, 1000);
+});
