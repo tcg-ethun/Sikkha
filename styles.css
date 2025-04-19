@@ -5,10 +5,10 @@
     font-display: swap;
     box-sizing: border-box;
     cursor: pointer;
-    -webkit-tap-highlight-color: transparent; /* Prevents blue flash on touch */
-    -webkit-touch-callout: none; /* Prevents callout menu on touch and hold */
-    -webkit-user-select: none; /* Prevents text selection on touch */
-    user-select: none; /* Standard property for preventing text selection */
+    -webkit-tap-highlight-color: transparent; 
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none;
+    user-select: none; 
 }
 
 :root {
@@ -80,41 +80,74 @@ margin-bottom: 4rem;
 .bubble1{
     width: 30px;
     height: 30px;
-    margin-left: 20px;
+    margin-left: 280px;
     margin-top: 30px;
     z-index: 1000;
+    transform: rotate(50deg);
     border-radius: 50px;
     /* background:linear-gradient(to right, rgb(79, 79, 238),white); */
     animation: drop 14s ease infinite;
 }
-
-.bubble2{
-    width: 30px;
-    height: 30px;
-    margin-left: 80px;
-    margin-top: 30px;
-    z-index: 1000;
+.bubble1:hover{
+    opacity: 0;
+}
+#sk{
+    width: 100%;
+    height: 3rem;
     border-radius: 50px;
-    /* background:linear-gradient(to right, rgb(79, 79, 238),white); */
-    animation: fly 14s ease 1;
+    padding: 10px;
+    /* background-color: rgb(196, 233, 249); */
 }
-@keyframes drop {
+#sv{
+    width: 130px;
+    margin-top: -30%;
+    transform: rotate(-90deg);
+}
+.hero-logo-animate{
+    animation: upDown 2s ease infinite;
+}
+
+@keyframes upDown {
     0%{
-     transform: translateY(-300px);
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);
     }
     100%{
-        transform: translateY(1300px);
-    }
-}
-@keyframes fly {
-    0%{
-     transform: translateY(1700px);
-    }
-    100%{
-        opacity: .4;
+        transform: translateY(0px);
     }
 }
 
+.skill-block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -100px;
+    gap: 15px;
+    flex-direction: row;
+}
+.svg-block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.skill-list{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    height: 5rem;
+    font-size: 15px;
+    justify-content: center;
+    gap: 15px;
+    box-shadow: 0px 0px 15px rgb(229, 229, 229);
+    border-radius: 010px;
+    background-color: rgb(255, 255, 255);
+}
 .clock{
     margin-top: 4rem;
     display: flex;
