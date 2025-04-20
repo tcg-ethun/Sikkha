@@ -501,6 +501,10 @@ hr{
     display: block;
 }
 
+#hero-image{
+    margin-top: 10%;
+}
+
 .hero p {
     font-size: 1rem;
     margin-bottom: 0.5rem; /* Reduced from 1rem */
