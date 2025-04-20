@@ -201,9 +201,9 @@ ul{
 #map{
     position: absolute;
     margin-left: 40%;
-    margin-top: -200px;
-    width: 200px;
-    height: 200px;
+    margin-top: -260px;
+    width: 400px;
+    height: 300px;
 }
 #abo{
     width: 100%;
@@ -688,7 +688,7 @@ footer {
         position: absolute;
         margin-left: 35%;
         margin-top: -200px;
-        width: 240px;
+        width: 200px;
         height: 200px;
         border-radius: 10px;
     }
