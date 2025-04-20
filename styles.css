@@ -404,7 +404,7 @@ hr{
   border-top-left-radius: 50px;
   border-bottom-right-radius: 50px;
     background: var(--box-color);
-    margin-top: -2rem;
+    margin-top: -1rem;
     margin-bottom: 3rem;
 }
 
