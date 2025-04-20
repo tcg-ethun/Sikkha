@@ -196,7 +196,14 @@ margin-bottom: 4rem;
     text-align: left;
 }
 ul{
-    margin-left: 10%;
+    margin-left: 04%;
+}
+#map{
+    position: absolute;
+    margin-left: 40%;
+    margin-top: -30%;
+    width: 200px;
+    height: 200px;
 }
 #abo{
     width: 100%;
@@ -677,7 +684,13 @@ footer {
     .navbar {
         padding: 1rem;
     }
-    
+    #map{
+        position: absolute;
+        margin-left: 35%;
+        margin-top: -200px;
+        width: 240px;
+        height: 200px;
+    }
     .nav-links {
         position: fixed;
         top: 0;
