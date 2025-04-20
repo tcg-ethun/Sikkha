@@ -18,8 +18,9 @@
     --background-color: #ffffff;
     --text-color: #333333;
     --card-bg: #ffffff;
-    --footer:rgb(237, 237, 237);
+    --footer:rgb(241, 240, 240);
     --social: white;
+    --social-shadow:0px 0px 15px rgb(204, 202, 202);
     --abo: rgb(2, 2, 67);
     --shadow: 0px 0px 15px rgb(223, 219, 219);
     --menu-toggle: rgb(69, 69, 239);
