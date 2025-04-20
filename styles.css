@@ -201,7 +201,7 @@ ul{
 #map{
     position: absolute;
     margin-left: 40%;
-    margin-top: -30%;
+    margin-top: -200px;
     width: 200px;
     height: 200px;
 }
@@ -690,6 +690,7 @@ footer {
         margin-top: -200px;
         width: 240px;
         height: 200px;
+        border-radius: 10px;
     }
     .nav-links {
         position: fixed;
